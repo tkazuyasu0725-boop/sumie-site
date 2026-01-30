@@ -1978,39 +1978,65 @@ img {
 }
 
 /* ===== About Stats ===== */
+.about-stats-section {
+  padding: 60px 40px;
+  background: var(--white);
+}
+
 .about-stats {
-  display: flex;
-  gap: 32px;
-  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .about-stat {
   text-align: center;
-  padding: 24px;
-  background: rgba(0, 200, 150, 0.05);
-  border: 1px solid rgba(0, 200, 150, 0.2);
-  border-radius: 8px;
+  padding: 40px 24px;
+  background: var(--white);
+  border: 2px solid var(--gray-200);
+  border-radius: 16px;
   transition: all 0.3s;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .about-stat:hover {
-  background: rgba(0, 200, 150, 0.1);
   border-color: var(--accent);
+  box-shadow: 0 10px 40px rgba(0, 200, 150, 0.15);
+  transform: translateY(-5px);
 }
 
 .about-stat-number {
   display: block;
-  font-size: 36px;
+  font-size: 48px;
   font-weight: 900;
   color: var(--accent);
   font-family: 'Inter', sans-serif;
+  line-height: 1;
 }
 
 .about-stat-label {
   display: block;
-  font-size: 12px;
+  font-size: 14px;
   color: var(--gray-500);
-  margin-top: 4px;
+  margin-top: 12px;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .about-stats {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .about-stat {
+    padding: 24px;
+  }
+
+  .about-stat-number {
+    font-size: 36px;
+  }
 }
 
 /* ===== Service Card Icon ===== */

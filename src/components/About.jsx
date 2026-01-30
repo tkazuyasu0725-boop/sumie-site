@@ -45,9 +45,7 @@ const About = () => {
     offset: ['start end', 'end start']
   })
 
-  const y = useTransform(scrollYProgress, [0, 1], [100, -100])
-  const rotate = useTransform(scrollYProgress, [0, 1], [5, -5])
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.8])
+  const y = useTransform(scrollYProgress, [0, 1], [50, -50])
 
   const stats = [
     { number: 500, suffix: '+', label: '制作実績' },
@@ -57,48 +55,51 @@ const About = () => {
 
   return (
     <section className="section" id="about" ref={ref}>
+      {/* Stats - 上部に配置 */}
+      <motion.div 
+        className="about-stats-section"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="section-inner">
+          <div className="about-stats">
+            {stats.map((stat, index) => (
+              <motion.div 
+                key={stat.label}
+                className="about-stat"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ scale: 1.05, y: -5 }}
+              >
+                <span className="about-stat-number">
+                  <Counter end={stat.number} />
+                  {stat.suffix}
+                </span>
+                <span className="about-stat-label">{stat.label}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </motion.div>
+
       <div className="section-inner">
         <div className="about">
           <motion.div 
             className="about-visual"
-            style={{ y, rotate }}
+            style={{ y }}
           >
             <motion.div 
               className="about-big-text"
-              style={{ scale }}
               whileHover={{ 
                 scale: 1.05,
                 textShadow: '0 0 40px rgba(0, 200, 150, 0.3)'
               }}
             >
               ABOUT<br />US
-            </motion.div>
-            
-            {/* Stats */}
-            <motion.div 
-              className="about-stats"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-            >
-              {stats.map((stat, index) => (
-                <motion.div 
-                  key={stat.label}
-                  className="about-stat"
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                  whileHover={{ scale: 1.1, y: -5 }}
-                >
-                  <span className="about-stat-number">
-                    <Counter end={stat.number} />
-                    {stat.suffix}
-                  </span>
-                  <span className="about-stat-label">{stat.label}</span>
-                </motion.div>
-              ))}
             </motion.div>
           </motion.div>
           
