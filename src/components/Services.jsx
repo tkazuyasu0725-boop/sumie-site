@@ -6,44 +6,44 @@ const services = [
   {
     label: 'AD',
     en: 'Advertisement',
-    title: '定額保証型\nインターネット広告運用',
-    desc: '月額5万円（税別）〜アカウントのサポートが可能です。',
-    icon: '📊'
+    title: 'クリニック特化\nインターネット広告運用',
+    desc: 'Google・Yahoo・SNS広告で集患を最大化します。',
+    features: ['診療科別の構造理解', '予約枠と広告の連動', 'CV数ではなく粗利で見る']
   },
   {
     label: 'LP',
     en: 'Landing Page',
-    title: '戦略思考型\nLP制作',
-    desc: '実績とロジックに基づく戦略思考型LPは高い実績を残しています。',
-    icon: '🎨'
+    title: '心を動かす\nLP制作',
+    desc: '患者様の心に響くランディングページを丁寧に設計。',
+    features: ['不安の解消装置として設計', '信頼を作る情報設計', 'ファーストビューで勝負']
   },
   {
-    label: 'EC',
-    en: 'E-Commerce',
-    title: '最短5日公開\nShopify構築',
-    desc: '最短5日でD2Cショップをオープンできます。',
-    icon: '🛒'
+    label: 'CR',
+    en: 'Creative',
+    title: '墨絵のような\nクリエイティブ制作',
+    desc: '余白と情緒を大切にした上質なデザインを提供。',
+    features: ['医院の人格を視覚化', '余白で信頼を作る', '煽らない静かな自信']
   },
   {
-    label: 'CM',
-    en: 'Content Marketing',
-    title: '成果報酬型\nSEO記事制作',
-    desc: '上位表示されなければ記事制作費もかかりません。',
-    icon: '📝'
+    label: 'MEO',
+    en: 'MEO',
+    title: '地域密着型\nMEO対策',
+    desc: 'Googleマップで上位表示を実現し、近隣からの来院を促進。',
+    features: ['口コミを増やす仕組み', '写真で選ばれる設計', '継続的な運用代行']
+  },
+  {
+    label: 'WEB',
+    en: 'Website',
+    title: '信頼を伝える\nWebサイト制作',
+    desc: 'クリニックの世界観を表現する洗練されたサイト。',
+    features: ['採用・信頼・紹介に効く', '情報設計で信頼を作る', 'SEOの土台になる']
   },
   {
     label: 'CO',
     en: 'Consulting',
-    title: '戦略的\nコンサルティング',
-    desc: '徹底的な市場調査から一気通貫したコンサルティング。',
-    icon: '💡'
-  },
-  {
-    label: 'OM',
-    en: 'Owned Media',
-    title: 'オウンドメディア\n運用代行',
-    desc: 'メディア設計から記事制作、運用改善まで一括サポート。',
-    icon: '📱'
+    title: '戦略的\nマーケティング支援',
+    desc: '市場調査から施策提案まで一気通貫でサポート。',
+    features: ['何をやらないか決める', '患者の検討フロー設計', '院長の意思決定を支援']
   }
 ]
 
@@ -98,14 +98,14 @@ const ServiceCard = ({ service, index }) => {
       onMouseLeave={handleMouseLeave}
       whileHover={{ 
         z: 50,
-        boxShadow: '0 50px 100px rgba(0, 200, 150, 0.3)'
+        boxShadow: '0 50px 100px rgba(139, 115, 85, 0.2)'
       }}
     >
       <motion.div
         className="service-card-bg"
         style={{
           background: isHovered 
-            ? 'radial-gradient(circle at var(--mouse-x) var(--mouse-y), rgba(0, 200, 150, 0.15), transparent 40%)'
+            ? 'radial-gradient(circle at var(--mouse-x) var(--mouse-y), rgba(139, 115, 85, 0.1), transparent 40%)'
             : 'transparent'
         }}
       />
@@ -114,27 +114,31 @@ const ServiceCard = ({ service, index }) => {
         className="service-card-label"
         animate={{ 
           boxShadow: isHovered 
-            ? '0 0 30px rgba(0, 200, 150, 0.8)' 
-            : '0 0 20px rgba(0, 200, 150, 0.4)'
+            ? '0 0 30px rgba(139, 115, 85, 0.6)' 
+            : '0 0 20px rgba(139, 115, 85, 0.3)'
         }}
       >
         {service.label}
       </motion.span>
       
-      <motion.div 
-        className="service-card-icon"
-        animate={{ 
-          scale: isHovered ? 1.2 : 1,
-          rotate: isHovered ? [0, -10, 10, 0] : 0
-        }}
-        transition={{ duration: 0.3 }}
-      >
-        {service.icon}
-      </motion.div>
-      
       <p className="service-card-en">{service.en}</p>
       <h3 className="service-card-title">{service.title}</h3>
       <p className="service-card-desc">{service.desc}</p>
+      
+      {service.features && (
+        <ul className="service-card-features">
+          {service.features.map((feature, i) => (
+            <motion.li 
+              key={i}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: isHovered ? 1 : 0.7 }}
+              transition={{ delay: i * 0.05 }}
+            >
+              {feature}
+            </motion.li>
+          ))}
+        </ul>
+      )}
       
       <motion.div
         initial={{ opacity: 0, x: -20 }}
@@ -181,7 +185,7 @@ const Services = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            戦略的マーケティング施策
+            クリニック特化のマーケティング
           </motion.h2>
           <motion.p 
             className="section-desc"
@@ -190,8 +194,8 @@ const Services = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            私たちは戦略思考を基盤に、「調査」→「設計」→「制作」→「運用」→「改善」に至るまで、
-            一気通貫で施策のご提案が可能です。
+            医療広告のルールを熟知したプロフェッショナルが、
+            患者様の心を動かすマーケティングをご提案します。
           </motion.p>
         </motion.div>
 

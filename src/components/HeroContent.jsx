@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import AnimatedLogo from './AnimatedLogo'
 
 const HeroContent = () => {
   // Animation variants
@@ -25,49 +26,49 @@ const HeroContent = () => {
     }
   }
 
-  const bigTextVariants = {
-    hidden: { opacity: 0, x: 50 },
+  const logoVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
     visible: {
-      opacity: 0.6,
-      x: 0,
+      opacity: 1,
+      scale: 1,
       transition: {
         duration: 1.2,
         ease: [0.25, 0.46, 0.45, 0.94],
-        delay: 0.5
+        delay: 0.2
       }
     }
   }
 
   return (
-    <div className="hero-content-wrapper">
+    <div className="hero-content-wrapper hero-content-wrapper--centered">
+      {/* Animated Logo - Center */}
       <motion.div
-        className="hero-content"
+        className="hero-logo-container"
+        variants={logoVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        <AnimatedLogo size={450} />
+      </motion.div>
+
+      {/* Text Content - Bottom */}
+      <motion.div
+        className="hero-content hero-content--bottom"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
         <motion.p className="hero-eyebrow" variants={itemVariants}>
-          MARKETING COMPANY
+          CREATIVE COMPANY
         </motion.p>
         
-        <motion.h1 className="hero-title" variants={itemVariants}>
-          デジタル領域に特化した
-          <br />
-          <span className="hero-title-highlight">戦略思考型</span>
-          <br />
-          ブラックマーケティング
+        <motion.h1 className="hero-title hero-title--centered" variants={itemVariants}>
+          心が動く瞬間を
+          <span className="hero-title-highlight">設計する</span>
         </motion.h1>
         
-        <motion.p className="hero-desc" variants={itemVariants}>
-          わたしたちは戦略に重点を置くマーケティング会社です。
-          <br />
-          アウトプット以前に、徹底的な市況調査、競合分析、内部状況の把握に努めます。
-          <br />
-          "戦略段階で結果は決まる"というのがわたしたちの考えです。
-        </motion.p>
-        
-        <motion.p className="hero-section-label" variants={itemVariants}>
-          About AD BUZZ
+        <motion.p className="hero-desc hero-desc--centered" variants={itemVariants}>
+          クリニックに特化したインターネット広告運用
         </motion.p>
         
         <motion.a 
@@ -76,28 +77,13 @@ const HeroContent = () => {
           variants={itemVariants}
           whileHover={{ 
             scale: 1.05,
-            boxShadow: '0 0 20px rgba(0, 200, 150, 0.3)'
+            boxShadow: '0 0 20px rgba(139, 115, 85, 0.3)'
           }}
           whileTap={{ scale: 0.98 }}
         >
           VIEW MORE
           <span className="hero-btn-arrow"></span>
         </motion.a>
-      </motion.div>
-
-      <motion.div
-        className="hero-visual"
-        variants={bigTextVariants}
-        initial="hidden"
-        animate="visible"
-      >
-        <div className="hero-big-text">
-          BLACK
-          <br />
-          MARKE
-          <br />
-          TING
-        </div>
       </motion.div>
     </div>
   )

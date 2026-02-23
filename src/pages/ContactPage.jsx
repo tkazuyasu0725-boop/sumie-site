@@ -2,12 +2,12 @@ import { useState, useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 
 const services = [
-  'インターネット広告運用',
+  'クリニック広告運用',
   'LP（ランディングページ）制作',
-  'Shopify構築',
-  'SEO記事制作',
-  'コンサルティング',
-  'オウンドメディア運用',
+  'MEO対策',
+  'Webサイト制作',
+  'クリエイティブ制作',
+  'マーケティングコンサルティング',
   'その他'
 ]
 
@@ -60,9 +60,21 @@ const ContactPage = () => {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ delay: 0.3, type: 'spring', stiffness: 200 }}
-              style={{ fontSize: 80, marginBottom: 32 }}
+              style={{ 
+                width: 80, 
+                height: 80, 
+                borderRadius: '50%',
+                background: 'var(--accent)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginBottom: 32,
+                color: 'var(--cream)',
+                fontSize: 32,
+                fontWeight: 700
+              }}
             >
-              ✅
+              ✓
             </motion.div>
             <motion.h1 
               className="page-hero-title"
@@ -159,9 +171,8 @@ const ContactPage = () => {
               </p>
 
               {[
-                { icon: '📞', label: 'お電話', value: '03-XXXX-XXXX', note: '受付時間：平日 10:00 〜 19:00' },
-                { icon: '📧', label: 'メール', value: 'info@ad-buzz.co.jp' },
-                { icon: '📍', label: '所在地', value: '〒150-0000\n東京都渋谷区〇〇 1-2-3' },
+                { label: 'MAIL', sublabel: 'メール', value: 'info@sumie.net' },
+                { label: 'ADDRESS', sublabel: '所在地', value: '〒105-0001\n東京都港区虎ノ門4-3-1\n城山トラストタワー27階' },
               ].map((item, index) => (
                 <motion.div 
                   key={item.label}
@@ -174,12 +185,25 @@ const ContactPage = () => {
                 >
                   <motion.div 
                     className="contact-info-icon"
-                    whileHover={{ scale: 1.1, rotate: 10 }}
+                    whileHover={{ scale: 1.05 }}
+                    style={{
+                      width: 48,
+                      height: 48,
+                      borderRadius: '50%',
+                      background: 'var(--accent)',
+                      color: 'var(--cream)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: 10,
+                      fontWeight: 700,
+                      letterSpacing: '0.05em'
+                    }}
                   >
-                    {item.icon}
+                    {item.label.slice(0, 2)}
                   </motion.div>
                   <div>
-                    <p className="contact-info-label">{item.label}</p>
+                    <p className="contact-info-label">{item.sublabel}</p>
                     <p className="contact-info-value" style={{ whiteSpace: 'pre-line' }}>{item.value}</p>
                     {item.note && <p className="contact-info-note">{item.note}</p>}
                   </div>

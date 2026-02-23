@@ -28,10 +28,9 @@ const Header = () => {
     >
       <div className="header-inner">
         <Link to="/" className="logo">
-          <div className="logo-icon">A</div>
           <div>
-            <div className="logo-text">AD BUZZ</div>
-            <div className="logo-sub">MARKETING COMPANY</div>
+            <div className="logo-text">Sumie</div>
+            <div className="logo-sub">CREATIVE COMPANY</div>
           </div>
         </Link>
 

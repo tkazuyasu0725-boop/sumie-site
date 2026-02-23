@@ -27,24 +27,24 @@ const Counter = ({ end, duration = 2, suffix = '' }) => {
 }
 
 const team = [
-  { name: '山田 太郎', role: '代表取締役 / CEO', desc: '大手広告代理店で10年間マーケティング戦略を担当。' },
-  { name: '鈴木 花子', role: 'クリエイティブディレクター', desc: 'LP制作のスペシャリストとして数々の成功事例を持つ。' },
-  { name: '佐藤 健一', role: 'テクニカルディレクター', desc: 'Shopify認定パートナーとしてEC構築を牽引。' },
-  { name: '田中 美咲', role: 'マーケティングマネージャー', desc: 'ROI最大化のための戦略立案を得意とする。' },
+  { name: '代表取締役', role: 'CEO', desc: 'クリニックマーケティングのプロフェッショナル' },
+  { name: 'クリエイティブ', role: 'Creative Director', desc: '心を動かすデザインを追求' },
+  { name: 'マーケティング', role: 'Marketing Manager', desc: '医療広告の専門家' },
+  { name: 'ディレクター', role: 'Account Director', desc: 'お客様と共に成果を追求' },
 ]
 
 const values = [
-  { title: '戦略思考', desc: 'すべての施策に意味を持たせ、論理的なアプローチで成果を追求。', icon: '🎯' },
-  { title: '結果にコミット', desc: '投げっぱなしにせず、お客様と共に成果が出るまで伴走。', icon: '🤝' },
-  { title: '一気通貫', desc: '調査から改善まで、すべてのプロセスを一貫してサポート。', icon: '🔄' },
-  { title: 'スピード感', desc: '市場の変化に素早く対応し、最短での成果実現を目指す。', icon: '⚡' },
+  { title: '心を感じる', desc: '目には見えない感情や気配に耳を澄まし、本質を捉えます。' },
+  { title: '丁寧に描く', desc: '墨絵のように、一筆一筆丁寧にストーリーを描きます。' },
+  { title: '大胆に形に', desc: '心を動かす瞬間を、大胆に表現へと落とし込みます。' },
+  { title: '共に歩む', desc: 'お客様と共に成長し、長期的なパートナーとして寄り添います。' },
 ]
 
 const stats = [
-  { number: 500, suffix: '+', label: '制作実績' },
-  { number: 98, suffix: '%', label: '顧客満足度' },
-  { number: 25, suffix: '名', label: 'チームメンバー' },
-  { number: 5, suffix: '年', label: '創業' },
+  { number: 300, suffix: '+', label: 'クリニック支援' },
+  { number: 95, suffix: '%', label: '継続率' },
+  { number: 15, suffix: '名', label: 'メンバー' },
+  { number: 3, suffix: '年', label: '創業' },
 ]
 
 const AboutPage = () => {
@@ -90,7 +90,7 @@ const AboutPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
           >
-            戦略思考を武器に、お客様のビジネス成長をサポートします
+            心が動く瞬間を設計するクリエイティブカンパニー
           </motion.p>
         </motion.div>
         <motion.div 
@@ -122,8 +122,8 @@ const AboutPage = () => {
                 style={{
                   textAlign: 'center',
                   padding: 40,
-                  background: 'rgba(0, 200, 150, 0.05)',
-                  border: '1px solid rgba(0, 200, 150, 0.2)',
+                  background: 'rgba(139, 115, 85, 0.05)',
+                  border: '1px solid rgba(139, 115, 85, 0.2)',
                   borderRadius: 8
                 }}
               >
@@ -172,12 +172,9 @@ const AboutPage = () => {
             <table className="info-table">
               <tbody>
                 {[
-                  ['会社名', '株式会社アドバズ（AD BUZZ, inc.）'],
-                  ['設立', '2020年4月1日'],
-                  ['資本金', '1,000万円'],
-                  ['代表取締役', '山田 太郎'],
-                  ['従業員数', '25名（2026年1月現在）'],
-                  ['所在地', '〒150-0000 東京都渋谷区〇〇 1-2-3 〇〇ビル5F'],
+                  ['会社名', '株式会社Sumie'],
+                  ['事業内容', 'クリニックに特化したインターネット広告運用'],
+                  ['所在地', '〒105-0001 東京都港区虎ノ門4-3-1 城山トラストタワー27階'],
                 ].map(([label, value], i) => (
                   <motion.tr 
                     key={label}
@@ -220,7 +217,7 @@ const AboutPage = () => {
               className="vision-text"
               style={{ fontSize: 24, lineHeight: 2 }}
             >
-              {'「戦略なくして成果なし」'.split('').map((char, i) => (
+              {'「心が動く瞬間を設計する」'.split('').map((char, i) => (
                 <motion.span
                   key={i}
                   initial={{ opacity: 0, color: 'var(--gray-600)' }}
@@ -240,9 +237,10 @@ const AboutPage = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.5 }}
             >
-              私たちは、すべてのマーケティング施策において戦略思考を基盤としています。
-              表面的な施策ではなく、市場調査・競合分析・内部状況の把握を徹底し、
-              本質的な課題解決と持続的な成長をお客様と共に実現します。
+              心。それは目には見えません。しかし、確かに存在しています。
+              墨絵に描かれた松から、風の音や香りを感じ取るように。
+              私たちは、人の見えない感情や気配に耳を澄まし、それを表現へと落とし込みます。
+              丁寧にストーリーを描き、大胆に形にします。
             </motion.p>
           </motion.div>
         </div>
@@ -273,16 +271,10 @@ const AboutPage = () => {
                 whileHover={{ 
                   scale: 1.05, 
                   y: -10,
-                  boxShadow: '0 20px 40px rgba(0, 200, 150, 0.2)'
+                  boxShadow: '0 20px 40px rgba(139, 115, 85, 0.15)'
                 }}
                 style={{ transformStyle: 'preserve-3d' }}
               >
-                <motion.span 
-                  style={{ fontSize: 48, display: 'block', marginBottom: 16 }}
-                  whileHover={{ scale: 1.2, rotate: [0, -10, 10, 0] }}
-                >
-                  {value.icon}
-                </motion.span>
                 <span className="value-number">0{index + 1}</span>
                 <h3 className="value-title">{value.title}</h3>
                 <p className="value-desc">{value.desc}</p>
@@ -321,9 +313,18 @@ const AboutPage = () => {
               >
                 <motion.div 
                   className="team-card-avatar"
-                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  whileHover={{ scale: 1.05 }}
+                  style={{ 
+                    width: 60, 
+                    height: 60, 
+                    borderRadius: '50%', 
+                    background: 'var(--gray-300)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: 16
+                  }}
                 >
-                  👤
                 </motion.div>
                 <h3 className="team-card-name">{member.name}</h3>
                 <p className="team-card-role">{member.role}</p>

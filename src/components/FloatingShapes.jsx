@@ -115,9 +115,9 @@ const ParticleField = () => {
       </bufferGeometry>
       <pointsMaterial
         size={0.05}
-        color="#00c896"
+        color="#8b7355"
         transparent
-        opacity={0.6}
+        opacity={0.4}
         sizeAttenuation
       />
     </points>
@@ -127,55 +127,55 @@ const ParticleField = () => {
 const FloatingShapes = () => {
   return (
     <group>
-      {/* Main accent shapes */}
+      {/* Main accent shapes - Sumi/ink inspired colors */}
       <FloatingShape
         position={[4, 1, -2]}
-        geometry="icosahedron"
-        color="#00c896"
-        speed={1.2}
+        geometry="sphere"
+        color="#2c2c2c"
+        speed={0.8}
         distort={true}
-        scale={1.5}
+        scale={1.8}
       />
       
       <FloatingShape
         position={[-3, -2, -1]}
         geometry="torus"
-        color="#00e6ac"
-        speed={0.8}
+        color="#8b7355"
+        speed={0.6}
         distort={false}
-        scale={1}
+        scale={1.2}
       />
       
       <FloatingShape
         position={[5, -1, -3]}
-        geometry="octahedron"
-        color="#00c896"
-        speed={1}
+        geometry="sphere"
+        color="#4a4a4a"
+        speed={0.7}
+        distort={true}
+        scale={1}
+      />
+      
+      <FloatingShape
+        position={[-4, 2, -2]}
+        geometry="icosahedron"
+        color="#a08060"
+        speed={0.5}
         distort={true}
         scale={0.8}
       />
       
       <FloatingShape
-        position={[-4, 2, -2]}
+        position={[2, 3, -4]}
         geometry="sphere"
-        color="#ffffff"
-        speed={0.6}
-        distort={true}
+        color="#6b6560"
+        speed={0.4}
+        distort={false}
         scale={0.6}
       />
-      
-      <FloatingShape
-        position={[2, 3, -4]}
-        geometry="torusKnot"
-        color="#00c896"
-        speed={0.5}
-        distort={false}
-        scale={0.5}
-      />
 
-      {/* Decorative rings */}
-      <GlowRing position={[3, 0, -5]} scale={1} color="#00c896" />
-      <GlowRing position={[-2, 1, -6]} scale={0.7} color="#00e6ac" />
+      {/* Decorative rings - warm gray */}
+      <GlowRing position={[3, 0, -5]} scale={1.2} color="#8b7355" />
+      <GlowRing position={[-2, 1, -6]} scale={0.8} color="#6b6560" />
       
       {/* Background particles */}
       <ParticleField />

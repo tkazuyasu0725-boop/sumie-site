@@ -25,14 +25,14 @@ const Scene3D = () => {
           <pointLight
             position={[-10, -10, -5]}
             intensity={0.5}
-            color="#00c896"
+            color="#8b7355"
           />
           
           {/* Additional rim light */}
           <pointLight
             position={[5, -5, 10]}
             intensity={0.3}
-            color="#00e6ac"
+            color="#a08060"
           />
           
           <FloatingShapes />

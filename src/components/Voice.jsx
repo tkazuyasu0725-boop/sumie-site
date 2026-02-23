@@ -4,31 +4,31 @@ import { Link } from 'react-router-dom'
 
 const voices = [
   {
-    quote: '「リニューアル後に人材の質も成約率もアップ！柔軟・迅速かつ的確な意見に信頼を寄せています。」',
-    company: '株式会社エージェント',
-    name: '永崎様',
-    tags: ['#BtoC', '#LP制作'],
+    quote: '「患者様の心に寄り添ったクリエイティブで、来院数が大幅に増加しました。」',
+    company: '美容皮膚科クリニック',
+    name: '院長 田中様',
+    tags: ['#美容クリニック', '#広告運用'],
     rating: 5
   },
   {
-    quote: '「商品の良さを正確にわかりやすく伝えるLPで、消費者の信頼を獲得できました。」',
-    company: '健康食品メーカー',
-    name: '福本様',
-    tags: ['#BtoC', '#LP制作'],
+    quote: '「医療広告のルールを熟知されていて安心してお任せできました。」',
+    company: '歯科医院',
+    name: '院長 山田様',
+    tags: ['#歯科', '#LP制作'],
     rating: 5
   },
   {
-    quote: '「HPの問題点を洗い出し、全面リニューアル！離脱率の低下と集客アップに成功しました。」',
-    company: '株式会社おうちサービス',
-    name: '代表 大橋様',
-    tags: ['#BtoC', '#HP制作'],
+    quote: '「丁寧なヒアリングと上質なデザインで、クリニックの世界観を表現していただけました。」',
+    company: '心療内科クリニック',
+    name: '院長 佐藤様',
+    tags: ['#心療内科', '#Web制作'],
     rating: 5
   },
   {
-    quote: '「LP、広告、SEOのすべてが期待以上の成果で満足しています。パートナーとして信頼できます。」',
-    company: '公認会計士・税理士事務所',
-    name: '永安様',
-    tags: ['#BtoB', '#広告運用'],
+    quote: '「MEO対策で地域からの問い合わせが倍増。Sumieさんの対応も素晴らしいです。」',
+    company: '整形外科クリニック',
+    name: '事務長 鈴木様',
+    tags: ['#整形外科', '#MEO'],
     rating: 5
   }
 ]
@@ -53,7 +53,7 @@ const VoiceCard = ({ voice, index }) => {
       whileHover={{ 
         scale: 1.03,
         rotateY: 5,
-        boxShadow: '0 20px 60px rgba(0, 200, 150, 0.25)'
+        boxShadow: '0 20px 60px rgba(139, 115, 85, 0.2)'
       }}
       style={{ transformStyle: 'preserve-3d' }}
     >
@@ -69,8 +69,8 @@ const VoiceCard = ({ voice, index }) => {
         "
       </motion.div>
       
-      {/* Rating Stars */}
-      <div className="voice-card-rating">
+      {/* Rating indicator */}
+      <div className="voice-card-rating" style={{ display: 'flex', gap: 4 }}>
         {[...Array(voice.rating)].map((_, i) => (
           <motion.span 
             key={i}
@@ -78,13 +78,13 @@ const VoiceCard = ({ voice, index }) => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.5 + i * 0.1 }}
-            animate={{ 
-              rotate: isHovered ? [0, -20, 20, 0] : 0,
-              scale: isHovered ? 1.2 : 1
+            style={{ 
+              width: 8, 
+              height: 8, 
+              borderRadius: '50%', 
+              background: 'var(--accent)'
             }}
-          >
-            ⭐
-          </motion.span>
+          />
         ))}
       </div>
       
@@ -99,13 +99,17 @@ const VoiceCard = ({ voice, index }) => {
         <motion.div 
           className="voice-card-avatar"
           animate={{ 
-            scale: isHovered ? 1.1 : 1,
-            borderColor: isHovered ? 'var(--accent)' : 'transparent'
+            scale: isHovered ? 1.05 : 1,
+            borderColor: isHovered ? 'var(--accent)' : 'var(--gray-500)'
           }}
-          style={{ border: '2px solid' }}
-        >
-          👤
-        </motion.div>
+          style={{ 
+            width: 40, 
+            height: 40, 
+            borderRadius: '50%', 
+            background: 'var(--gray-600)',
+            border: '2px solid'
+          }}
+        />
         <div className="voice-card-info">
           <p className="voice-card-company">{voice.company}</p>
           <p className="voice-card-name">{voice.name}</p>

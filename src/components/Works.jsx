@@ -4,31 +4,28 @@ import { Link } from 'react-router-dom'
 
 const works = [
   {
-    icon: '🏪',
-    label: 'ECショップリニューアル',
-    title: 'アパレルEC様',
-    result: '売上5倍',
-    number: 500,
+    label: 'LP制作 & 広告運用',
+    title: '美容クリニック様',
+    result: '新規患者数3倍',
+    number: 300,
     suffix: '%',
-    color: '#00c896'
+    color: '#8b7355'
   },
   {
-    icon: '📚',
-    label: '漫画LP & 公式HPリニューアル',
-    title: '学習塾様',
-    result: '3ヵ月で目標達成',
-    number: 3,
-    suffix: 'ヵ月',
-    color: '#00e6ac'
+    label: 'MEO対策 & Web制作',
+    title: '歯科医院様',
+    result: '予約数2倍',
+    number: 200,
+    suffix: '%',
+    color: '#a08060'
   },
   {
-    icon: '💼',
-    label: 'サービスサイトリニューアル',
-    title: 'BtoBサービス様',
-    result: '会員数1,300人',
-    number: 1300,
-    suffix: '人',
-    color: '#00c896'
+    label: '広告運用 & LP制作',
+    title: '内科クリニック様',
+    result: '月間問合せ150件',
+    number: 150,
+    suffix: '件',
+    color: '#8b7355'
   }
 ]
 
@@ -105,13 +102,18 @@ const WorkCard = ({ work, index }) => {
       >
         <motion.span
           animate={{ 
-            scale: isHovered ? 1.3 : 1,
-            rotate: isHovered ? [0, -15, 15, 0] : 0
+            scale: isHovered ? 1.1 : 1
           }}
           transition={{ duration: 0.4 }}
-          style={{ fontSize: 48 }}
+          style={{ 
+            fontSize: 14, 
+            fontWeight: 700, 
+            letterSpacing: '0.1em',
+            color: work.color,
+            fontFamily: 'Inter, sans-serif'
+          }}
         >
-          {work.icon}
+          CASE
         </motion.span>
       </motion.div>
       
@@ -194,8 +196,8 @@ const Works = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            戦略思考による<br />
-            マーケティングノウハウを体系化
+            心を動かす<br />
+            クリニックマーケティング実績
           </motion.h2>
         </motion.div>
 

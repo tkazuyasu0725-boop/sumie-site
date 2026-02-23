@@ -1,62 +1,62 @@
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion'
 import { useRef, useState } from 'react'
 
-const categories = ['すべて', 'LP制作', 'リスティング広告', 'SEO', 'Shopify', 'マーケティング戦略']
+const categories = ['すべて', 'クリニック広告', 'LP制作', 'MEO', 'Web制作', 'マーケティング戦略']
 
 const blogs = [
   {
     id: 1,
-    category: 'コンテンツマーケティング',
-    title: '中小企業にこそオウンドメディアがおすすめ！',
-    excerpt: 'オウンドメディアは大企業だけのものではありません。',
+    category: 'クリニック広告',
+    title: '医療広告ガイドラインに沿った効果的な広告運用とは',
+    excerpt: '医療広告にはルールがあります。守りながら成果を出す方法を解説。',
     date: '2026.01.26',
     readTime: '8分',
-    color: '#00c896'
+    color: '#8b7355'
   },
   {
     id: 2,
-    category: 'LP制作',
-    title: '実績豊富なLP制作会社おすすめ17選！',
-    excerpt: 'LP制作会社は数多くありますが、どの会社に依頼すれば良いか。',
+    category: 'MEO',
+    title: 'クリニックのMEO対策完全ガイド〜地域で選ばれる医院に',
+    excerpt: 'Googleマップで上位表示されるためのポイントを解説。',
     date: '2026.01.14',
     readTime: '12分',
-    color: '#00e6ac'
+    color: '#a08060'
   },
   {
     id: 3,
-    category: 'リスティング広告',
-    title: '【弊社事例】リスティング広告の成功事例6選！',
-    excerpt: 'リスティング広告で成果を出すための重要なポイント。',
+    category: 'LP制作',
+    title: '患者様の心を動かすクリニックLP制作のポイント',
+    excerpt: '来院につながるLPの作り方を事例とともにご紹介。',
     date: '2026.01.09',
     readTime: '10分',
-    color: '#00c896'
+    color: '#8b7355'
   },
   {
     id: 4,
-    category: 'LP制作',
-    title: 'AD BUZZの「なんかすごいLP」ってどんなLP？',
-    excerpt: '多くの企業様からLP制作のご依頼をいただいています。',
+    category: 'マーケティング戦略',
+    title: '開業医必見！集患につながるWebマーケティング戦略',
+    excerpt: 'クリニック経営を成功させるためのWeb戦略の基本。',
     date: '2025.12.26',
     readTime: '6分',
-    color: '#00e6ac'
+    color: '#a08060'
   },
   {
     id: 5,
-    category: 'SEO',
-    title: '【2026年最新】SEO対策の基本と実践テクニック',
-    excerpt: 'SEO対策は日々進化しています。',
+    category: 'Web制作',
+    title: '患者様に安心感を与えるクリニックサイトデザイン',
+    excerpt: '来院のハードルを下げるサイトデザインのコツ。',
     date: '2025.12.20',
     readTime: '15分',
-    color: '#00c896'
+    color: '#8b7355'
   },
   {
     id: 6,
-    category: 'Shopify',
-    title: 'Shopifyで売れるECサイトを作るための7つのポイント',
-    excerpt: 'Shopifyでサイトを作っただけでは売上は伸びません。',
+    category: 'クリニック広告',
+    title: '美容クリニックの広告運用で成果を出す5つのポイント',
+    excerpt: '競争が激しい美容クリニック業界での広告戦略。',
     date: '2025.12.15',
     readTime: '9分',
-    color: '#00e6ac'
+    color: '#a08060'
   },
 ]
 

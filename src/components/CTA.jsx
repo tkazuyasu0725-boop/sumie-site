@@ -64,8 +64,8 @@ const CTA = () => {
         style={{ scale }}
         animate={{
           boxShadow: isHovered 
-            ? '0 0 200px 100px rgba(0, 200, 150, 0.3)'
-            : '0 0 100px 50px rgba(0, 200, 150, 0.15)'
+            ? '0 0 200px 100px rgba(139, 115, 85, 0.2)'
+            : '0 0 100px 50px rgba(139, 115, 85, 0.1)'
         }}
       />
 
@@ -77,7 +77,7 @@ const CTA = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          {'戦略思考を活用した売上アップ、'.split('').map((char, i) => (
+          {'心が動く瞬間を、'.split('').map((char, i) => (
             <motion.span
               key={i}
               initial={{ opacity: 0, y: 20 }}
@@ -90,7 +90,7 @@ const CTA = () => {
             </motion.span>
           ))}
           <br />
-          {'わたしたちがサポートします'.split('').map((char, i) => (
+          {'一緒に設計しませんか'.split('').map((char, i) => (
             <motion.span
               key={i}
               initial={{ opacity: 0, y: 20 }}
@@ -121,35 +121,6 @@ const CTA = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <motion.div 
-            className="cta-phone"
-            whileHover={{ scale: 1.05 }}
-          >
-            <motion.div 
-              className="cta-phone-icon"
-              animate={{ 
-                rotate: [0, -10, 10, -10, 10, 0],
-                scale: [1, 1.1, 1]
-              }}
-              transition={{ 
-                duration: 2, 
-                repeat: Infinity,
-                repeatDelay: 3
-              }}
-            >
-              📞
-            </motion.div>
-            <div>
-              <motion.p 
-                className="cta-phone-number"
-                whileHover={{ color: 'var(--accent)' }}
-              >
-                03-XXXX-XXXX
-              </motion.p>
-              <p className="cta-phone-time">受付時間 平日 10:00 〜 19:00</p>
-            </div>
-          </motion.div>
-
           <MagneticButton>
             <motion.div
               onMouseEnter={() => setIsHovered(true)}

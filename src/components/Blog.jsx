@@ -4,32 +4,32 @@ import { Link } from 'react-router-dom'
 
 const blogs = [
   {
-    category: 'コンテンツマーケティング',
-    title: '中小企業にこそオウンドメディアがおすすめ！',
+    category: 'クリニック広告',
+    title: '医療広告ガイドラインに沿った効果的な広告運用とは',
     date: '2026.01.26',
     readTime: '8分',
-    color: '#00c896'
+    color: '#8b7355'
   },
   {
-    category: 'LP制作',
-    title: '実績豊富なLP制作会社おすすめ17選！',
+    category: 'MEO対策',
+    title: 'クリニックのMEO対策完全ガイド〜地域で選ばれる医院に',
     date: '2026.01.14',
     readTime: '12分',
-    color: '#00e6ac'
-  },
-  {
-    category: 'リスティング広告',
-    title: '【弊社事例】リスティング広告の成功事例6選！',
-    date: '2026.01.09',
-    readTime: '10分',
-    color: '#00c896'
+    color: '#a08060'
   },
   {
     category: 'LP制作',
-    title: 'AD BUZZの「なんかすごいLP」ってどんなLP？',
+    title: '患者様の心を動かすクリニックLP制作のポイント',
+    date: '2026.01.09',
+    readTime: '10分',
+    color: '#8b7355'
+  },
+  {
+    category: 'マーケティング',
+    title: '開業医必見！集患につながるWebマーケティング戦略',
     date: '2025.12.26',
     readTime: '6分',
-    color: '#00e6ac'
+    color: '#a08060'
   }
 ]
 
@@ -211,7 +211,7 @@ const Blog = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            AD BUZZ 中の人ブログ
+            Sumie ブログ
           </motion.h2>
           <motion.p 
             className="section-desc"
@@ -220,7 +220,7 @@ const Blog = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            業界ニュースやマーケティングノウハウに関するtechブログ
+            クリニック経営に役立つマーケティング情報をお届け
           </motion.p>
         </motion.div>
 
